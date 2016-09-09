@@ -1,8 +1,12 @@
 <html>
 <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>To Do List</title>
 </head>
 <body>
+    <div class="jumbotron">
     <h1>Homies</h1>
 
     {% if homies is not empty %}
@@ -15,6 +19,7 @@
            {% endfor %}
        </ul>
    {% endif %}
+   </ddiv>
 
    <form action='/homies' method='post'>
        <label for='name'>Name</label>
@@ -26,7 +31,7 @@
        <label for='address'>Address</label>
        <input id='address' name='address' type='text'>
 
-       <button type='submit'>Add task</button>
+       <button type='submit'>Add Contact</button>
    </form>
    <form action='/delete_homies' method='post'>
        <button type='submit'>Clear</button>
