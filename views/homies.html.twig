@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Homies</h1>
+
+    {% if homies is not empty %}
+       <p>Here are all your homies:</p>
+       <ul>
+           {% for homie in homies %}
+               <li>{{ homie.getName }}</li>
+               <li>{{ homie.getPhone }}</li>
+               <li>{{ homie.getAddress }}</li>
+           {% endfor %}
+       </ul>
+   {% endif %}
+
+   <form action='/homies' method='post'>
+       <label for='name'>Name</label>
+       <input id='name' name='name' type='text'>
+
+       <label for='phone'>Phone</label>
+       <input id='phone' name='phone' type='text'>
+
+       <label for='address'>Address</label>
+       <input id='address' name='address' type='text'>
+
+       <button type='submit'>Add task</button>
+   </form>
+   <form action='/delete_homies' method='post'>
+       <button type='submit'>Clear</button>
+   </form>
+</body>
+</html>
