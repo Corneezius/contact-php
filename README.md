@@ -31,7 +31,7 @@ _Find all the bugs and we'll make you a shareholder_
 
 ## Support and contact details
 
-_If you have any suggestions contact Nick at nickh93@outlook.com_
+_If you have any suggestions contact Cornelius_
 
 ## Technologies Used
 
