@@ -18,28 +18,15 @@
       return $app['twig']->render('homies.html.twig', array('homies' => Homie::getAll()));
     });
 
-    $app->post("/homies", function() {
+    $app->post("/homies", function() use ($app) {
         $homie = new Homie($name = $_POST['name'],$phone = $_POST['phone'],$address = $_POST['address']);
         $homie->save();
-        return "
-            <h1>All my homies!</h1>
-            <ol>
-              <li><h1>" . $homie->getName() . "</h1>
-                  <p>" . $homie->getPhone() . "</p>
-                  <p>" . $homie->getAddress() . "</p></li>
-            </ol>
-            <p><a href='/'>View my homies.</a></p>
-        ";
+        return $app['twig']->render('create_homie.html.twig', array('newhomie' => $homie));
     });
 
-    $app->post("/delete_homies", function() {
-
+    $app->post("/delete_homies", function() use ($app){
         Homie::deleteAll();
-
-        return "
-            <h1>List cleared!</h1>
-            <p><a href='/'>Home</a></p>
-        ";
+        return $app['twig']->render('delete_homies.html.twig');
     });
 
     return $app;
