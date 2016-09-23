@@ -21,6 +21,11 @@
 
         <button type='submit btn-success'>Add Contact</button>
     </form>
+
+    <form action='/delete_homies' method='post'>
+        <button type='submit' class="btn btn-danger">Clear List</button>
+    </form>
+
     </div>
     <div class="contacts">
     {% if homies is not empty %}
